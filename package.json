@@ -1,0 +1,14 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "First Manchester Codes Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "tbilbe",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
+}
