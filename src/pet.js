@@ -1,9 +1,5 @@
+function Pet(name) {
+  return name;
+}
 
-
-
-
-
-
-module.exports({
-
-})
+module.exports = { Pet }
