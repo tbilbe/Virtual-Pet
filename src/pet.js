@@ -1,5 +1,5 @@
 function Pet(name) {
-  return name;
+  this.name = name;
 }
 
-module.exports = { Pet }
+module.exports = { Pet };
