@@ -17,37 +17,28 @@ npm install -D jest
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Initialise a node project from the command line
 
-Say what the step will be
-
+```JavaScript
+npm init virtual-pet
 ```
-Give the example
-```
+add the Jest test framework to the package.json
 
-And repeat
-
-```
-until finished
+```JavaScript
+"scripts": {
+    "test": "jest"
+  },
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Inside the project directory run the tests
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
 
 ```
 Give an example
