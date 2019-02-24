@@ -5,6 +5,16 @@ function Pet(name) {
   this.fitness = 10;
   this.hunger = 0;
 }
+/*
+getter methods before other methods
+this is because you set on empty object
+*/
+
+Pet.prototype = {
+  get isAlive() {
+    return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+  }
+}
 
 Pet.prototype.growUp = function () {
   this.age += 1;
@@ -34,6 +44,12 @@ Pet.prototype.check = function () {
     return `I need a walk;`
   } else {
     return `I feel great!`;
+  }
+}
+
+Pet.prototype.isAlive = function () {
+  if (this.hunger >= 10) {
+    this.isAlive = false;
   }
 }
 

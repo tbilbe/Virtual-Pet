@@ -109,3 +109,75 @@ describe(`Check-Up! - How are you feeling?`, () => {
     expect(pet.check()).toEqual('I feel great!');
   })
 });
+
+describe(`Are you alive! - 'getter'`, () => {
+  let pet;
+  beforeEach(() => {
+    pet = new Pet('Logan');
+  });
+  it('isAlive is a property should be true if the pet is alive!', () => {
+    expect(pet.isAlive).toBe(true);
+  });
+
+  it(`if we grow and don't feed we die`, () => {
+    pet.growUp();
+    pet.growUp();
+    expect(pet.isAlive).toBe(false);
+  });
+  it(`if we grow and don't walk we die`, () => {
+    pet.growUp();
+    pet.feed();
+    pet.growUp();
+    pet.feed();
+    pet.growUp();
+    pet.feed();
+    pet.growUp();
+    expect(pet.isAlive).toBe(false);
+  });
+  it(`if we grow too old we die`, () => {
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    pet.growUp(); pet.feed(); pet.walk();
+    expect(pet.isAlive).toBe(false)
+  });
+
+});
