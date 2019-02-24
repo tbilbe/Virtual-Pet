@@ -89,4 +89,23 @@ describe('don\'t let me starve!', () => {
       expect(pet.hunger).toBe(0)
     })
   })
+
+});
+
+describe(`Check-Up! - How are you feeling?`, () => {
+  let pet;
+  beforeEach(() => {
+    pet = new Pet('Logan');
+  });
+  it(`checks levels of the pet.`, () => {
+    pet.grow();
+    expect(pet.check()).toEqual('I am hungry');
+    pet.grow();
+    expect(pet.check()).toEqual('I am hungry');
+    pet.grow();
+    expect(pet.check()).toEqual('I am hungry AND I need a walk');
+  });
+  it(`checks if the pet is ok!`, () => {
+    expect(pet.check()).toEqual('I feel great!');
+  })
 });
