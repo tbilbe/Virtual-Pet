@@ -17,7 +17,7 @@ describe('Growing up!', () => {
     expect(pet.age).toBe(1);
   })
 });
-describe('Gettting older and Unhealthy!', () => {
+xdescribe('Gettting older and Unhealthy!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -40,7 +40,7 @@ describe('Gettting older and Unhealthy!', () => {
     pet.growUp();
   });
 });
-describe('Keeping Fit', () => {
+xdescribe('Keeping Fit', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -62,7 +62,7 @@ describe('Keeping Fit', () => {
   });
 });
 
-describe('don\'t let me starve!', () => {
+xdescribe('don\'t let me starve!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -75,7 +75,7 @@ describe('don\'t let me starve!', () => {
     expect(pet.hunger).toBe(2);
   });
 
-  describe('Pets hunger can\'t go below zero', () => {
+  xdescribe('Pets hunger can\'t go below zero', () => {
     let pet;
     beforeEach(() => {
       pet = new Pet('Logan');
@@ -94,7 +94,7 @@ describe('don\'t let me starve!', () => {
 
 });
 
-describe(`Check-Up! - How are you feeling?`, () => {
+xdescribe(`Check-Up! - How are you feeling?`, () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -112,7 +112,7 @@ describe(`Check-Up! - How are you feeling?`, () => {
   })
 });
 
-describe(`Are you alive! - 'getter'`, () => {
+xdescribe(`Are you alive! - 'getter'`, () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -184,7 +184,7 @@ describe(`Are you alive! - 'getter'`, () => {
 
 });
 
-describe('Guarding - Error checks', () => {
+xdescribe('Guarding - Error checks', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Oscar');
@@ -203,5 +203,16 @@ describe('Guarding - Error checks', () => {
   });
   test('dead pet -> growUp() shouldn\'t work', () => {
     expect(pet.growUp).toThrow(`Your pet is no longer alive :(`)
+  });
+});
+
+describe('Children->?!', () => {
+  it('can you have kids', () => {
+    let pet, baby;
+    beforeEach(() => {
+      pet = new Pet('Oscar');
+      baby = new Pet('Lulu')
+    });
+    expect(pet.children).toContain({});
   });
 });

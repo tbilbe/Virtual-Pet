@@ -14,7 +14,6 @@ Jest testing framework
 ```JavaScript
 npm install -D jest
 ```
-
 ### Installing
 
 Initialise a node project from the command line
@@ -29,9 +28,6 @@ add the Jest test framework to the package.json
     "test": "jest"
   },
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ### Author
 
 Tom Bilbe
