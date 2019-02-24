@@ -60,3 +60,33 @@ describe('Keeping Fit', () => {
     expect(pet.fitness).toBe(10);
   });
 });
+
+describe('don\'t let me starve!', () => {
+  let pet;
+  beforeEach(() => {
+    pet = new Pet('Logan');
+  });
+  it('hunger level goes down everytime we feed', () => {
+    expect(pet.hunger).toBe(0);
+    pet.grow(); // cause the pet to need food!
+    expect(pet.hunger).toBe(5);
+    pet.feed(); // decrease hunger -> by 3
+    expect(pet.hunger).toBe(2);
+  });
+
+  describe('Pets hunger can\'t go below zero', () => {
+    let pet;
+    beforeEach(() => {
+      pet = new Pet('Logan');
+    });
+    it('can\'t go below zero', () => {
+      pet.grow();
+      pet.grow();
+      pet.feed();
+      pet.feed();
+      pet.feed();
+      pet.feed();
+      expect(pet.hunger).toBe(0)
+    })
+  })
+});
