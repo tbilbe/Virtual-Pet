@@ -6,7 +6,7 @@ function Pet(name) {
   this.hunger = 0;
 }
 
-Pet.prototype.grow = function () {
+Pet.prototype.growUp = function () {
   this.age += 1;
   this.hunger += 5;
   this.fitness -= 3;

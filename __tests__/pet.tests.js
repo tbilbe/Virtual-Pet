@@ -14,8 +14,8 @@ describe('Growing up!', () => {
   beforeEach(() => {
     pet = new Pet('Logan');
   })
-  it('grow method should increase age by one', () => {
-    pet.grow();
+  it('growUp method should increase age by one', () => {
+    pet.growUp();
     expect(pet.age).toBe(1);
   })
 });
@@ -24,28 +24,28 @@ describe('Gettting older and Unhealthy!', () => {
   beforeEach(() => {
     pet = new Pet('Logan');
   });
-  it('grow method should increase hunger by 5', () => {
+  it('growUp method should increase hunger by 5', () => {
     expect(pet.hunger).toBe(0);
-    pet.grow();
+    pet.growUp();
     expect(pet.hunger).toBe(5);
-    pet.grow();
+    pet.growUp();
     expect(pet.hunger).toBe(10);
   });
-  it('grow method should decrease fitness by 3', () => {
+  it('growUp method should decrease fitness by 3', () => {
     expect(pet.fitness).toBe(10);
-    pet.grow();
+    pet.growUp();
     expect(pet.fitness).toBe(7);
-    pet.grow();
+    pet.growUp();
     expect(pet.fitness).toBe(4);
-    pet.grow();
+    pet.growUp();
   });
 });
 describe('Keeping Fit', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
-    pet.grow();
-    pet.grow();
+    pet.growUp();
+    pet.growUp();
   });
   it('should increase the fitness by 4', () => {
     expect(pet.fitness).toBe(4);
@@ -68,7 +68,7 @@ describe('don\'t let me starve!', () => {
   });
   it('hunger level goes down everytime we feed', () => {
     expect(pet.hunger).toBe(0);
-    pet.grow(); // cause the pet to need food!
+    pet.growUp(); // cause the pet to need food!
     expect(pet.hunger).toBe(5);
     pet.feed(); // decrease hunger -> by 3
     expect(pet.hunger).toBe(2);
@@ -80,8 +80,8 @@ describe('don\'t let me starve!', () => {
       pet = new Pet('Logan');
     });
     it('can\'t go below zero', () => {
-      pet.grow();
-      pet.grow();
+      pet.growUp();
+      pet.growUp();
       pet.feed();
       pet.feed();
       pet.feed();
@@ -98,11 +98,11 @@ describe(`Check-Up! - How are you feeling?`, () => {
     pet = new Pet('Logan');
   });
   it(`checks levels of the pet.`, () => {
-    pet.grow();
+    pet.growUp();
     expect(pet.check()).toEqual('I am hungry');
-    pet.grow();
+    pet.growUp();
     expect(pet.check()).toEqual('I am hungry');
-    pet.grow();
+    pet.growUp();
     expect(pet.check()).toEqual('I am hungry AND I need a walk');
   });
   it(`checks if the pet is ok!`, () => {
