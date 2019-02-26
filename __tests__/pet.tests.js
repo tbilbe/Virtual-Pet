@@ -7,7 +7,7 @@ it('Should create a new Pet with a name when called', () => {
   expect(cat.name).toBe('Oscar');
 });
 
-describe('Growing up!', () => {
+xdescribe('Growing up!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -93,6 +93,7 @@ xdescribe('don\'t let me starve!', () => {
   })
 
 });
+
 
 xdescribe(`Check-Up! - How are you feeling?`, () => {
   let pet;
@@ -207,12 +208,15 @@ xdescribe('Guarding - Error checks', () => {
 });
 
 describe('Children->?!', () => {
-  it('can you have kids', () => {
-    let pet, baby;
-    beforeEach(() => {
-      pet = new Pet('Oscar');
-      baby = new Pet('Lulu')
-    });
-    expect(pet.children).toContain({});
+  let baby, pet;
+  beforeEach(() => {
+    pet = new Pet('Oscar');
+    baby = new Pet('Lulu')
+  });
+  test('can you adopt :)', () => {
+    expect(baby.name).toBe('Lulu')
+    pet.adoption(baby);
+    expect(pet.children).toContain(baby);
+    expect(pet.children[0].name).toBe('Lulu');
   });
 });
