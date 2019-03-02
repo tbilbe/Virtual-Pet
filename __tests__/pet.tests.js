@@ -7,7 +7,7 @@ it('Should create a new Pet with a name when called', () => {
   expect(cat.name).toBe('Oscar');
 });
 
-xdescribe('Growing up!', () => {
+describe('Growing up!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -17,7 +17,7 @@ xdescribe('Growing up!', () => {
     expect(pet.age).toBe(1);
   })
 });
-xdescribe('Gettting older and Unhealthy!', () => {
+describe('Gettting older and Unhealthy!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -40,7 +40,7 @@ xdescribe('Gettting older and Unhealthy!', () => {
     pet.growUp();
   });
 });
-xdescribe('Keeping Fit', () => {
+describe('Keeping Fit', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -62,7 +62,7 @@ xdescribe('Keeping Fit', () => {
   });
 });
 
-xdescribe('don\'t let me starve!', () => {
+describe('don\'t let me starve!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -75,7 +75,7 @@ xdescribe('don\'t let me starve!', () => {
     expect(pet.hunger).toBe(2);
   });
 
-  xdescribe('Pets hunger can\'t go below zero', () => {
+  describe('Pets hunger can\'t go below zero', () => {
     let pet;
     beforeEach(() => {
       pet = new Pet('Logan');
@@ -95,16 +95,18 @@ xdescribe('don\'t let me starve!', () => {
 });
 
 
-xdescribe(`Check-Up! - How are you feeling?`, () => {
+describe(`Check-Up! - How are you feeling?`, () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
   });
-  xit(`checks levels of the pet.`, () => {
+  it(`checks levels of the pet.`, () => {
     pet.growUp();
     expect(pet.checkUp()).toEqual('I am hungry');
+    pet.feed();
     pet.growUp();
     expect(pet.checkUp()).toEqual('I am hungry');
+    pet.feed();
     pet.growUp();
     expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
   });
@@ -113,7 +115,7 @@ xdescribe(`Check-Up! - How are you feeling?`, () => {
   })
 });
 
-xdescribe(`Are you alive! - 'getter'`, () => {
+describe(`Are you alive! - 'getter'`, () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -137,55 +139,16 @@ xdescribe(`Are you alive! - 'getter'`, () => {
     pet.growUp();
     expect(pet.isAlive).toBe(false);
   });
-  xit(`if we grow too old we die`, () => {
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    expect(pet.isAlive).toBe(false)
+  it(`if we grow too old we die`, () => {
+    pet.age = 29;
+    expect(pet.isAlive).toBe(true);
+    pet.growUp();
+    expect(pet.isAlive).toBe(false);
   });
 
 });
 
-xdescribe('Guarding - Error checks', () => {
+describe('Guarding - Error checks', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Oscar');
