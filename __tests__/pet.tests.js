@@ -7,8 +7,9 @@ it('Should create a new Pet with a name when called', () => {
   expect(cat.name).toBe('Oscar');
 });
 
-xdescribe('Growing up!', () => {
-  let pet;
+// don't commit skipped tests, tests are only valuable if they are actually run.
+xdescribe('Growing up!', () => { 
+  let pet; // nice use of scope and beforeEach for setup purposes.
   beforeEach(() => {
     pet = new Pet('Logan');
   })
@@ -71,16 +72,17 @@ xdescribe('don\'t let me starve!', () => {
     expect(pet.hunger).toBe(0);
     pet.growUp(); // cause the pet to need food!
     expect(pet.hunger).toBe(5);
-    pet.feed(); // decrease hunger -> by 3
+    pet.feed(); // decrease hunger -> by 3 
     expect(pet.hunger).toBe(2);
   });
 
+  // use backticks for strings if you need to use a ', then you don't need to escape...
   xdescribe('Pets hunger can\'t go below zero', () => {
     let pet;
     beforeEach(() => {
       pet = new Pet('Logan');
     });
-    it('can\'t go below zero', () => {
+    it(`can't go below zero`, () => {
       pet.growUp();
       pet.feed();
       pet.growUp();
@@ -138,48 +140,16 @@ xdescribe(`Are you alive! - 'getter'`, () => {
     expect(pet.isAlive).toBe(false);
   });
   xit(`if we grow too old we die`, () => {
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
-    pet.growUp(); pet.feed(); pet.walk();
+    // oh boy, what is this wall of code...
+    // why dont you just put these 3 methods 
+    // in a for loop
+    const MAX_AGE = 30;
+    for(let i = 0; i < MAX_AGE; i++) {
+          pet.growUp(); 
+          pet.feed(); 
+          pet.walk();
+    } 
+
     expect(pet.isAlive).toBe(false)
   });
 
