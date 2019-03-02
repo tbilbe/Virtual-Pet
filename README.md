@@ -23,6 +23,16 @@ npm init virtual-pet
 ```
 add the Jest test framework to the package.json
 
+also intalled es-lint with a mcr-codes flavouring (thats how you spell it in the UK!)
+.eslintrc file
+```JavaScript
+{
+  "extends": [
+    "mcr-codes"
+  ]
+}
+```
+
 ```JavaScript
 "scripts": {
     "test": "jest"
