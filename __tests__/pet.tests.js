@@ -1,7 +1,8 @@
 const { Pet } = require('../src/pet.js');
+
 it('returns an objct', () => {
   expect(new Pet('Fido')).toBeInstanceOf(Object);
-})
+});
 it('Should create a new Pet with a name when called', () => {
   const cat = new Pet('Oscar');
   expect(cat.name).toBe('Oscar');
@@ -11,11 +12,11 @@ describe('Growing up!', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
-  })
+  });
   it('growUp method should increase age by one', () => {
     pet.growUp();
     expect(pet.age).toBe(1);
-  })
+  });
 });
 describe('Gettting older and Unhealthy!', () => {
   let pet;
@@ -88,19 +89,16 @@ describe('don\'t let me starve!', () => {
       pet.feed();
       pet.feed();
       pet.feed();
-      expect(pet.hunger).toBe(0)
-    })
-  })
-
+      expect(pet.hunger).toBe(0);
+    });
+  });
 });
-
-
-describe(`Check-Up! - How are you feeling?`, () => {
+describe('Check-Up! - How are you feeling?', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
   });
-  it(`checks levels of the pet.`, () => {
+  it('checks levels of the pet.', () => {
     pet.growUp();
     expect(pet.checkUp()).toEqual('I am hungry');
     pet.feed();
@@ -110,12 +108,12 @@ describe(`Check-Up! - How are you feeling?`, () => {
     pet.growUp();
     expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
   });
-  it(`checks if the pet is ok!`, () => {
+  it('checks if the pet is ok!', () => {
     expect(pet.checkUp()).toEqual('I feel great!');
-  })
+  });
 });
 
-describe(`Are you alive! - 'getter'`, () => {
+describe('Are you alive! - \'getter\'', () => {
   let pet;
   beforeEach(() => {
     pet = new Pet('Logan');
@@ -124,12 +122,12 @@ describe(`Are you alive! - 'getter'`, () => {
     expect(pet.isAlive).toBe(true);
   });
 
-  it(`if we grow and don't feed we die`, () => {
+  it('if we grow and don\'t feed we die', () => {
     pet.growUp();
     pet.growUp();
     expect(pet.isAlive).toBe(false);
   });
-  it(`if we grow and don't walk we die`, () => {
+  it('if we grow and don\'t walk we die', () => {
     pet.growUp();
     pet.feed();
     pet.growUp();
@@ -139,13 +137,12 @@ describe(`Are you alive! - 'getter'`, () => {
     pet.growUp();
     expect(pet.isAlive).toBe(false);
   });
-  it(`if we grow too old we die`, () => {
+  it('if we grow too old we die', () => {
     pet.age = 29;
     expect(pet.isAlive).toBe(true);
     pet.growUp();
     expect(pet.isAlive).toBe(false);
   });
-
 });
 
 describe('Guarding - Error checks', () => {
@@ -157,27 +154,26 @@ describe('Guarding - Error checks', () => {
     pet.age = 30;
   });
   test('dead pet -> checkUp() should return :x !', () => {
-    expect(pet.checkUp()).toBe('Your pet is no longer alive :(')
+    expect(pet.checkUp()).toBe('Your pet is no longer alive :(');
   });
   test('dead pet -> walk() shouldn\'t work', () => {
-    expect(pet.walk).toThrow(`Your pet is no longer alive :(`);
+    expect(pet.walk).toThrow('Your pet is no longer alive :(');
   });
   test('dead pet -> feed() shouldn\'t work', () => {
-    expect(pet.feed).toThrow(`Your pet is no longer alive :(`)
+    expect(pet.feed).toThrow('Your pet is no longer alive :(');
   });
   test('dead pet -> growUp() shouldn\'t work', () => {
-    expect(pet.growUp).toThrow(`Your pet is no longer alive :(`)
+    expect(pet.growUp).toThrow('Your pet is no longer alive :(');
   });
 });
-
 describe('Children->?!', () => {
   let baby, pet;
   beforeEach(() => {
     pet = new Pet('Oscar');
-    baby = new Pet('Lulu')
+    baby = new Pet('Lulu');
   });
   test('can you adopt :)', () => {
-    expect(baby.name).toBe('Lulu')
+    expect(baby.name).toBe('Lulu');
     pet.adoption(baby);
     expect(pet.children).toContain(baby);
     expect(pet.children[0].name).toBe('Lulu');
