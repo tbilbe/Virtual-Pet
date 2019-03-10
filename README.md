@@ -1,4 +1,4 @@
-# Virtual-Pet Application
+# Virtual-Pet Application :smirk_cat: :scream_cat:
 
 Creation of a virtual pet that doesnt :poop everywhere! Hence no clean-up!
 
