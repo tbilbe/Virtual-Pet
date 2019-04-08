@@ -2,6 +2,8 @@
 
 Creation of a virtual pet that doesnt :poop everywhere! Hence no clean-up!
 
+:boom:
+
 ## Getting Started
 
 Fork and clone the Repo for development purposes. For testing we use Jest.
